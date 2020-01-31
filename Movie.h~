@@ -1,0 +1,19 @@
+#include "Media.h"
+#include <iostream>
+//intialize all variables and add function prototypes. Movie is a child of Media
+using namespace std;
+
+class Movie:public Media {
+ public:
+  Movie(char* newTitle, char* director, int year, float duration, float rating);
+  void printMedia();
+  char* getDirector();
+  float getDuration();
+  float getRating();
+  ~Movie();
+ private:
+  char* director;
+  float duration;
+  float rating;
+};
+    

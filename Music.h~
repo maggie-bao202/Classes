@@ -1,0 +1,18 @@
+#include "Media.h"
+#include <iostream>
+
+using namespace std;
+
+class Music:public Media {
+ public:
+  Music(char* newTitle, char* artist, int year, float duration, char* publisher);
+  virtual void printMedia();
+  char* getArtist();
+  float getDuration();
+  char* getPublisher();
+  ~Music();
+ private:
+  char* artist;
+  float duration;
+  char* publisher;
+};

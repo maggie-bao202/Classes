@@ -1,0 +1,29 @@
+#include "VideoGame.h" //connect to the header file
+#include <iostream>
+//VideoGame is a child of Media
+using namespace std;
+VideoGame::VideoGame(char* newTitle, int newYear, char* newPublisher, float newRating) : Media(newTitle, newYear){//constructor
+  type = 1;
+  title = newTitle;//change name for simplicity
+  year = newYear;
+  publisher = newPublisher;
+  rating = newRating;
+}
+void VideoGame::printMedia(){
+  cout << "Video Game" << endl;
+  cout << "Title: " << title << endl;
+  cout << "Year: " << year << endl;
+  cout << "Publisher: " << publisher << endl;
+  cout << "Rating: " << rating << endl;
+}
+
+char* VideoGame::getPublisher(){
+  return publisher;
+}
+float VideoGame::getRating(){
+  return rating;
+}
+VideoGame::~VideoGame(){//destructor, must use to delete char* elements
+  delete[] title;
+  delete[] publisher;
+}
